@@ -1,4 +1,7 @@
 const ALBUM_GRAPHQL_FIELDS = `
+sys {
+  id
+}
 name
 slug
 albumCover {

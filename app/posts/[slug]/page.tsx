@@ -41,6 +41,7 @@ export default async function PostPage({
                 <meta property="og:image" content={post.albumCover.url} />
               </div>
               <PostHeader
+                id={post.sys.id}
                 title={post.name}
                 coverImage={post.albumCover.url}
                 date={post.releaseYear}
