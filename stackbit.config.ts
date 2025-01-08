@@ -1,4 +1,5 @@
 import { ContentfulContentSource } from '@stackbit/cms-contentful'
+import { StackbitConfig } from '@stackbit/types'
 
 export default {
   stackbitVersion: '~0.6.0',
@@ -7,12 +8,12 @@ export default {
   contentSources: [
     new ContentfulContentSource({
       spaceId: process.env.CONTENTFUL_SPACE_ID!,
-      environment: process.env.CONTENTFUL_ENVIRONMENT,
-      previewToken: process.env.CONTENTFUL_PREVIEW_TOKEN!,
+      environment: 'master',
+      previewToken: process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN!,
       accessToken: process.env.CONTENTFUL_MANAGEMENT_TOKEN!,
     }),
   ],
   models: {
-    post: { type: 'post', urlPath: '/posts/{slug}' },
+    album: { type: 'page', urlPath: '/posts/{slug}' },
   }
-}
+} satisfies StackbitConfig
